@@ -32,6 +32,11 @@ class User extends Authenticatable
         'country'
     ];
 
+    public function getRouteKeyName()
+    {
+        return 'uuid';
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
