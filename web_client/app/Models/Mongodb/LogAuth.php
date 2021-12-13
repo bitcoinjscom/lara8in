@@ -17,7 +17,9 @@ class LogAuth extends Model
     protected $fillable = [
         'user_id',
         'ip_address',
-        'tag'
+        'tag',
+        'agent',
+        'origin'
     ];
 
     public function user()

@@ -46,7 +46,7 @@ return [
             'driver' => 'mongodb',
             'host' => env('MDB_HOST', '127.0.0.1'),
             'port' => env('MDB_PORT', 27017),
-            'database' => env('MDB_DATABASE', 'clickm'),
+            'database' => env('MDB_DATABASE', 'click'),
             'username' => env('MDB_USERNAME', ''),
             'password' => env('MDB_PASSWORD', ''),
             'options' => [
