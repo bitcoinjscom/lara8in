@@ -40,7 +40,12 @@ class coingekoassets extends Command
      */
     public function handle()
     {
-
+        $client = new CoinGeckoClient();
+        $data = $client->derivatives()->getExchanges();
+        foreach ($data as $exchange) {
+            Exchange::create($exchange);
+            Log::debug($exchange);
+        }
 
         return command::SUCCESS;
     }

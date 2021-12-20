@@ -26,6 +26,7 @@ Route::get('/', function () {
 Route::get('/about',function() {
     return Inertia::render('About/Index');
 });
+Route::get('/exchanges',[App\Http\Controllers\Web\ExchangesController::class,'index']);
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

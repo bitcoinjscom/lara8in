@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Jenssegers\Mongodb\Eloquent\Model;
 use Jenssegers\Mongodb\Eloquent\SoftDeletes;
@@ -9,10 +10,12 @@ use Jenssegers\Mongodb\Eloquent\SoftDeletes;
 class Exchange extends Model
 {
     use HasFactory, SoftDeletes;
+
     protected $collection = 'exchanges';
     protected $connection = 'mongodb';
+
     protected $primaryKey = 'id';
-    public $timestamps = true;
+
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
@@ -30,5 +33,12 @@ class Exchange extends Model
         'updated_at'
     ];
 
+    public static function boot() {
+        parent::boot();
 
+        static::creating(function($exchange)
+        {
+            //$exchange->
+        });
+    }
 }
