@@ -2,7 +2,10 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Exchange;
 use Illuminate\Console\Command;
+use Codenixsv\CoinGeckoApi\CoinGeckoClient;
+use Illuminate\Support\Facades\Log;
 
 class coingekoassets extends Command
 {
@@ -11,14 +14,14 @@ class coingekoassets extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'command:coingeko';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Update assets DB';
 
     /**
      * Create a new command instance.
@@ -37,6 +40,8 @@ class coingekoassets extends Command
      */
     public function handle()
     {
-        return 0;
+
+
+        return command::SUCCESS;
     }
 }
