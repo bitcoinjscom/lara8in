@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\PagesController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -23,6 +24,9 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+//Route::resource('pages', PagesController::class);
+Route::get('/promo', [PagesController::class,'promo']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
