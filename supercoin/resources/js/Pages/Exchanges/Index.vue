@@ -1,4 +1,5 @@
 <template>
+    <Navbar/>
     <div class="container mx-auto">
     <div class="flex flex-row">
     <div class="grid grid-cols-4 gap-4">
@@ -20,9 +21,14 @@
 </template>
 <script>
     import { Head, Link } from '@inertiajs/inertia-vue3';
+    import Navbar from '@/components/Navbar.vue'
     export default {
+        components:{
+          Navbar
+        },
         props:{
             exchanges:Object
         }
     }
+
 </script>
